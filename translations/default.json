@@ -757,14 +757,24 @@
     "multiplierPower": "Multiplier Power: {{power}}x || Multiplier: {{mult}}x",
     "acceleratorBoost": "Reset Diamonds and Prestige Upgrades, but add {{amount}}% Acceleration Power and 5 free Accelerators.",
     "mythosYouHave": "You have {{shards}} Mythos Shards, providing {{mult}} Multiplier Power boosts.",
+    "atomsYouHave": "You have {{atoms}} Atoms, providing {{power}} Building Power. Multiplier to Coin Production: {{mult}}",
+    "tesseractsYouHave": "You have {{tesseracts}} Wow! Tesseracts. Gain more by beating Challenge 10 on each Ascension.",
+    "constantYouHave": "You have a mathematical constant of {{const}}. Taxes are divided by {{amount}}.",
     "eachMultiplierBoost": "Each Multiplier Boost increases the base effect of Multipliers by 0.005!",
     "coinsPerSecond": "Coins/Sec: {{coins}} [{{percent}}%]",
     "costCoins": "Cost: {{coins}} coins.",
     "costDiamonds": "Cost: {{diamonds}} Diamonds.",
     "costMythos": "Cost: {{mythos}} Mythos.",
+    "costParticles": "Cost: {{particles}} Particles",
+    "costTesseracts": "Cost: {{tesseracts}} Tesseracts",
     "crystalMult": "You have {{crystals}} Crystals, multiplying Coin production by {{gain}}.",
     "hoverCrystalUpgrade": "Hover over a crystal upgrade to get information!",
-    "autoPrestige": "Prestige when your Diamonds can increase by a factor {{factor}} [Toggle number above]. Current Multiplier: {{mult}}.",
+    "autoPrestige": "{{action}} when your Diamonds can increase by a factor {{factor}} [Toggle number above]. Current Multiplier: {{mult}}.",
+    "autoReincarnate": "{{name}} when the autotimer is at least {{amount}} real-life seconds. [Toggle number above]. Current timer: {{timer}}s.",
+    "autoTesseract": "Auto buyer will save at least {{tesseracts}} tesseracts. [Enter number above].",
+    "autoAscensionTesseract": "On Ascension, Auto buyer will save at least {{percent}}% of your current amount of tesseracts. [Enter number above].",
+    "thanksR2x14": "Thanks to Research 2x14, you also multiply Crystal production by {{mult}}",
+    "thanksR2x15": "Thanks to Research 2x15, you also multiply Mythos Shard production by {{mult}}",
     "names": {
       "workers": "Workers: {{amount}} [+{{gain}}]",
       "investments": "Investments: {{amount}} [+{{gain}}]",
@@ -783,7 +793,17 @@
       "enchantments": "Enchantments: {{amount}} [+{{gain}}]",
       "wizards": "Wizards: {{amount}} [+{{gain}}]",
       "oracles": "Oracles: {{amount}} [+{{gain}}]",
-      "grandmasters": "Grandmasters: {{amount}} [+{{gain}}]"
+      "grandmasters": "Grandmasters: {{amount}} [+{{gain}}]",
+      "protons": "Protons: {{amount}} [+{{gain}}]",
+      "elements": "Elements: {{amount}} [+{{gain}}]",
+      "pulsars": "Pulsars: {{amount}} [+{{gain}}]",
+      "quasars": "Quasars: {{amount}} [+{{gain}}]",
+      "galacticNuclei": "Galactic Nuclei: {{amount}} [+{{gain}}]",
+      "dot": "Dot: {{amount}} [+{{gain}}]",
+      "vector": "Vector: {{amount}} [+{{gain}}]",
+      "threeSpace": "Three-Space: {{amount}} [+{{gain}}]",
+      "bentTime": "Bent Time: {{amount}} [+{{gain}}]",
+      "hilbertSpace": "Hilbert Space: {{amount}} [+{{gain}}]"
     },
     "per": {
       "crystal": "Crystal/sec: {{amount}}",
@@ -795,7 +815,17 @@
       "augments": "Augments/sec: {{amount}}",
       "enchantments": "Enchantments: {{amount}}",
       "wizards": "Wizards: {{amount}}",
-      "oracles": "Oracles/sec: {{amount}}"
+      "oracles": "Oracles/sec: {{amount}}",
+      "atoms": "Atoms/sec: {{amount}}",
+      "protons": "Protons/sec: {{amount}}",
+      "elements": "Elements/sec: {{amount}}",
+      "pulsars": "Pulsars/sec: {{amount}}",
+      "quasars": "Quasars/sec: {{amount}}",
+      "constant": "+Constant/sec: {{amount}}",
+      "dot": "Dot/sec: {{amount}}",
+      "vector": "Vector/sec: {{amount}}",
+      "threeSpace": "Three-Space/sec: {{amount}}",
+      "bentTime": "Bent Time/sec: {{amount}}"
     },
     "crystalUpgrades": {
       "currentLevel": "Current Level: <<lightblue|{{amount}}>>",
@@ -1143,7 +1173,7 @@
         "default": "Runes autobuyer will buy Blessings and Spirits"
       },
       "exaltedAchievements": "Unlocks new, very difficult achievements! They are earned differently from others, however... (WIP)",
-      "derpSmithsConucopia": "With blessing from the Derpsmith, every singularity grants +{{counter}}% more Octeracts!",
+      "derpSmithsCornucopia": "With blessing from the Derpsmith, every singularity grants +{{counter}}% more Octeracts!",
       "coolQOLCubes": {
         "hasLevel1": "Keep all Cube Opening researches AND gain the ability to automatically open a percentage of your cubes each Ascension!",
         "default": "Researches related to opening cubes will no longer reset on Ascension"
@@ -1500,6 +1530,215 @@
       }
     }
   },
+  "octeract": {
+    "buyLevel": {
+      "buyPrompt": "How many Octeracts would you like to spend? You have {{n}} OCT. Type -1 to use max!",
+      "cancelPurchase": "Purchase cancelled!",
+      "alreadyMax": "Hey! You have already maxed this upgrade. :D",
+      "cannotAfford": "You cannot afford this upgrade. Sorry!",
+      "multiBuy": "Purchased {{n}} levels, thanks to Multi Buy!"
+    },
+    "toString": {
+      "costNextLevel": "Cost for next level",
+      "becomeAffordable": "(Affordable in {{n}})"
+    },
+    "data": {
+      "octeractStarter":{
+        "name": "Octeracts for Dummies",
+        "description": "Hello... I Am Derpsmith... The Ancestor Of Ant God... I Did Not Expect You To Get Here. Here Is 25% More Quarks, 20% More Octeracts, And 100,000x Ant Speed...",
+        "effect": "You have {{n}} paid your respects to Derpsmith."
+      },
+      "octeractGain":{
+        "name": "Octeract Cogenesis",
+        "description": "Have you despised how slow these damn things are? Gain 1% more of them per level! Simple.",
+        "effect": "Octeract Gain is increased by {{n}}%."
+      },
+      "octeractGain2":{
+        "name": "Octeract Trigenesis",
+        "description": "It turns out that you have six additional dimensions to modify your Cogenesis. +1% more Octs per level!",
+        "effect": "Octeract Gain is increased by {{n}}%."
+      },
+      "octeractQuarkGain":{
+        "name": "Quark Octeract",
+        "description": "An altered forme of the hepteract, this gives a 1% Quark Bonus per level without Diminishing Return.",
+        "effect": "Quark gain is increased by {{n}}%."
+      },
+      "octeractQuarkGain2":{
+        "name": "Octo-Hepteract Primality Synergism",
+        "description": "For every 199 levels of Quark Octeract, you gain 0.01% more quarks per digit in your Quark Hepteract count per level!",
+        "effect": "Octo-Hepteract Primality Synergism is {{n}} active."
+      },
+      "octeractCorruption":{
+        "name": "EXTRA CHONKY Corruptions",
+        "description": "Adds one level to the cap on corruptions. Derpsmith approves.",
+        "effect": "Corruption level cap is increased by {{n}}"
+      },
+      "octeractGQCostReduce":{
+        "name": "EXTRA WIMPY Golden Quark Costs!",
+        "description": "Reduces the cost of Golden Quarks in the shop by 1% per level.",
+        "effect": "Golden Quarks are {{n}}% cheaper!"
+      },
+      "octeractExportQuarks":{
+        "name": "Improved Download Speeds",
+        "description": "Thanks to ethernet technology, export quarks are increased by 40% per level! Only normal ones.",
+        "effect": "Export quarks +{{n}}%"
+      },
+      "octeractImprovedDaily":{
+        "name": "CHONKER Daily Code",
+        "description": "Derpsmith hacks into the source code, and adds +1 free Singularity upgrade per day from Daily.",
+        "effect": "Code 'daily' gives +{{n}} free Singularity upgrades per use."
+      },
+      "octeractImprovedDaily2":{
+        "name": "CHONKERER Daily Code",
+        "description": "Derpsmith implemented hyperspeed multiplication. +1% more free Singularity upgrades per day from Daily!",
+        "effect": "Code 'daily' gives +{{n}}% more free Singularity upgrades per use."
+      },
+      "octeractImprovedDaily3":{
+        "name": "CHONKEREREST Daily Code",
+        "description": "It will never satisfy Derpsmith. +1 +0.5% more free Singularity upgrades per day from Daily!",
+        "effect": "Code 'daily' gives +{{n}} more free Singularity upgrades per use."
+      },
+      "octeractImprovedQuarkHept":{
+        "name": "I wish for even better Quark Hepteracts.",
+        "description": "The godmother is absent, but Derpsmith is here! +2% DR exponent per level. Stacks additively with all the others!",
+        "effect": "Quark Hepteract DR +{{n}}."
+      },
+      "octeractImprovedGlobalSpeed":{
+        "name": "The forbidden clock of time",
+        "description": "Hypothesized to be locked in a hyperbolic time chamber. +1% Global Speed per level per singularity!",
+        "effect": "Global Speed per singularity +{{n}}%"
+      },
+      "octeractImprovedAscensionSpeed":{
+        "name": "Abstract Photokinetics",
+        "description": "Gain +0.05% Ascension Speed per level per singularity!",
+        "effect": "Ascension Speed per singularity +{{n}}}%"
+      },
+      "octeractImprovedAscensionSpeed2":{
+        "name": "Abstract Exokinetics",
+        "description": "Gain +0.02% Ascension Speed per level per singularity!",
+        "effect": "Ascension Speed per singularity +{{n}}%"
+      },
+      "octeractImprovedFree":{
+        "name": "Wow! I want free upgrades to be better.",
+        "description": "Singularity Upgrade level is (paid level * free levels)^0.6 instead of being added.",
+        "effect": "Singularity Upgrade free levels are {{n}} being powered!"
+      },
+      "octeractImprovedFree2":{
+        "name": "Wow! Free upgrades still suck.",
+        "description": "Who said beggars can\"t be choosers? Extends the exponent of the first upgrade to 0.65.",
+        "effect": "Exponent of previous upgrade +{{n}}."
+      },
+      "octeractImprovedFree3":{
+        "name": "Wow! Make free upgrades good already, Platonic!",
+        "description": "Extends the exponent of the free upgrades to 0.70.",
+        "effect": "Exponent of the first upgrade +{{n]}"
+      },
+      "octeractImprovedFree4":{
+        "name": "Coupon of Ultimate Penniless Derpsmiths",
+        "description": "Each level adds 0.001 to the exponent of free upgrades, with the first level adding another 0.01!",
+        "effect": "Exponent of the first upgrade +{{n}}"
+      },
+      "octeractSingUpgradeCap":{
+        "name": "Overwriting Pointers",
+        "description": "Derpsmith encountered a SegFault after reassigning null... +1 to level cap on certain Singularity Upgrades per level!",
+        "effect": "Some Singularity Upgrades have +{{n}} max level!"
+      },
+      "octeractOfferings1":{
+        "name": "Offering Electrolosis",
+        "description": "Gain 1% more offerings per level.",
+        "effect": "Offering gain +{{n}}%"
+      },
+      "octeractObtainium1":{
+        "name": "Obtainium Deluge",
+        "description": "Gain 1% more obtainium per level.",
+        "effect": "Obtainium gain +{{n}}%"
+      },
+      "octeractAscensions":{
+        "name": "Voided Warranty",
+        "description": "Gain +1% Ascension Count per level, with a 2% bonus for every 10 levels.",
+        "effect": "Ascension Count increases {{n}}}% faster."
+      },
+      "octeractAscensions2":{
+        "name": "Hidden Late Fees",
+        "description": "Gain +1% Ascension Count per level, with a 2% bonus for every 10 levels. But... this scales a lot faster. Must be those hidden late fees.",
+        "effect": "Ascension Count increases {{n}}% faster."
+      },
+      "octeractAscensionsOcteractGain":{
+        "name": "Digital Octeract Accumulator",
+        "description": "Octeract gain is 1% faster for every digit in your Ascension count!",
+        "effect": "Octeract Gain per OOM Ascension count +{{n}}%"
+      },
+      "octeractFastForward":{
+        "name": "Derpsmith\"s Singularity Discombobulator",
+        "description": "Each level makes Singularity give +100% Golden Quarks (additive) and singularity at all time highest count grants +1 singularity count!",
+        "effect": "Singularities give {{n}}% more GQ and count as ${n} more."
+      },
+      "octeractAutoPotionSpeed":{
+        "name": "Pill of Increased Thirst",
+        "description": "You can buy pills of thirst-making to consume potions automatically faster! 4% faster per level to be precise.",
+        "effect": "Auto Potion Singularity Perk works {{n}}% faster than before!"
+      },
+      "octeractAutoPotionEfficiency":{
+        "name": "Vitamin O Infusion",
+        "description": "Thanks to the generosity of your Derpsmith, Potions are 2% more potent per level!",
+        "effect": "Potions give {{n}}% more Offerings and Obtainium."
+      },
+      "octeractOneMindImprover":{
+        "name": "Infinite Transcription of the One Mind",
+        "description": "You ask what this upgrade does, but Derpsmith just nods his head. What is he hiding from you?",
+        "effect": "One Mind converts Ascension Speed to Octeract Gain to the power of {{n}}."
+      },
+      "octeractAmbrosiaLuck":{
+        "name": "Berries of an Eight Leaf Clover (WIP)",
+        "description": "Totally not a reskin of the blueberry! Adds +1 Ambrosial Luck, which can increase Ambrosia drop amounts when Blueberries generate Ambrosia.",
+        "effect": "Ambrosial Luck +{{n}}(!)"
+      }
+    }
+  },
+  "singularityChallenge": {
+    "enterChallenge":{
+      "lowSingularity": "Derpsmith prohibits you from entering this challenge. Go do some more Singing first.",
+      "confirmation": "You are about to enter {{name}}. Your Singularity Timer will not reset but you will be taken back to the beginning of a Singularity. Do you proceed?",
+      "decline": "Derpsmith nods his head. Come back when you are ready...",
+      "acceptSuccess": "You are attempting {{name}} #{{tier}}! You were sent to Singularity {{singReq}}. Buy Antiquities to complete the challenge!",
+      "acceptFailure": "Derpsmith declares you are already in a singularity challenge and prohibits you from destroying the fabric of your Reality."
+    },
+    "exitChallenge": {
+      "incompleteWarning": "WARNING: You will not get a completion as you have not yet purchased Antiquities.",
+      "confirmation": "Are you sure you want to quit {{name}} Tier {{tier}} \n{{warning}}`",
+      "decline": "Derpsmith tries to hug you, but he has no arms.",
+      "acceptSuccess": "You have completed the {{tier}} tier of {{name}}! The corresponding challenge rewards have been updated.",
+      "acceptFailure": "You have been transported back to your highest reached Singularity. Try again soon! -Derpsmith"
+    },
+    "toString": {
+      "canEnter": "Can be entered at highest Singularity {{unlockSing}} [Your highest: {{highestSing}}]",
+      "tiersCompleted": "Tiers completed",
+      "currentTierSingularity": "The current tier of this challenge takes place in Singularity"
+
+    },
+    "data": {
+        "noSingularityUpgrades": {
+          "name":"No Singularity Upgrades",
+          "description":"Simply put, you have to beat the target singularity without (most) Singularity Upgrades. Octeracts, Perks and Quality of Life Singularity Upgrades are preserved.",
+          "rewardDescription":"Each completion increases cube gain of every dimension by 50%! First completion gives +12% Golden Quarks. 20th awards something `special` ;)"
+        },
+        "oneChallengeCap": {
+          "name":"One Challenge Caps",
+          "description":"Beat the target Singularity, but the first 14 Challenges have cap of only 1!",
+          "rewardDescription":"Each completion increases Corruption Multiplier Values by 0.03, no matter what. First Completion gives +3 to Reincarnation Challenge Cap. 20th completion grants +1 free Corruption level!"
+        },
+        "noOcteracts": {
+          "name":"No Octeract Effects",
+          "description":"Beat the target Singularity, but octeracts and their upgrades do nothing! Effective Singularity is also much higher based on tier.",
+          "rewardDescription":"Each completion increases Octeract to Cube Bonus power by 0.02 (BASE: 2.00). First completion adds a bonus to Offerings based on Octeracts. Final completion adds a bonus to Obtainium based on Octeracts."
+        },
+        "limitedAscensions": {
+          "name":"Twenty Ascensions Challenge",
+          "description":"Derpsmith put an embargo on Ascensions. Only (20 - completions) are allowed throughout the entire Singularity, before Ascensions trigger massive debuffs! Ascension Count Multiplier is hardcapped at 1. Oh and Delta is disabled. Ha.",
+          "rewardDescription":"Each completion grants 0.1% Ascension Speed per completion per digit in your Ascension count! First completion doubles the cap of all hepteract. Final completion adds another calculator in the shop!"
+        }
+    }
+  },
   "general": {
     "youAreInThe": "You are in the",
     "validation": {
@@ -1516,7 +1755,12 @@
     "OK": "OK",
     "Cancel": "Cancel",
     "autoOnBracket": "Auto [ON]",
-    "autoOffBracket": "Auto [OFF]"
+    "autoOffBracket": "Auto [OFF]",
+    "softCapped": "(Softcapped)",
+    "maxed": "(Maxed)",
+    "affordable": "(Affordable)",
+    "infinity": "Infinity",
+    "enabled": "[ENABLED]"
   },
   "upgrades": {
     "descriptions": {
@@ -1836,5 +2080,69 @@
     },
     "research": "Welcome to the future! Obtainium is gained through <<var(--green-text-color);|Reincarnations>>. I'd recommend studying the <<limegreen;|green-bordered>> researches first. The <<var(--crimson-text-color);|red-bordered>> researches are never reset whereas the <<white;|white-bordered>> researches will reset upon the next reset tier!",
     "shop": "Hover over each portion of the shop to see what each upgrade does!"
+  },
+  "runes": {
+    "offeringsYouHave": "You have {{offerings}} Offerings.",
+    "gainExp": "Gain {{amount}}x EXP per offering sacrificed.",
+    "recycleChance": "You have {{percent}}% chance of recycling your offerings. This multiplies EXP gain by {{mult}}!",
+    "hover": "Hey, hover over a rune icon to get details on what each one does and what benefits they're giving you!",
+    "thanksResearches": "Thanks to researches, your effective levels are increased by {{percent}}%",
+    "levelup": {
+      "1": "+(Level/4)^1.25 Accelerator, +0.25% Accelerators per level. +1 Accelerator Boost every 20 levels!",
+      "2": "+(Level/10) Multipliers every 10th level, +0.25% Multipliers per level. Tax growth is delayed more for each level!",
+      "3": "~(1 + (Level/2)^2 * 2^(Level/2) / 256)x Crystal Production. +1 free level for each Crystal upgrade per 16 levels!",
+      "4": "+0.125% building cost growth delay per level, +0.0625% Offering recycle chance per level [MAX: 25%], 2^((1000 - Level)/1100) Tax growth multiplier AFTER level 400",
+      "5": "~(1 + level/200)x Obtainium, (1 + Level^2/2500)x Ant Hatch Speed, +0.005 base Offerings for each tier per level",
+      "6": "+0.2% Quarks, +1% all Cube types per level! Start with +10% Quarks.",
+      "7": "I wonder what happens if you feed it {{exp}} Rune EXP."
+    },
+    "power": {
+      "1": "Speed Rune Bonus: +{{bonus}} Accelerators, +{{percent}}% Accelerators, +{{boost}} Accelerator Boosts.",
+      "2": "Duplication Rune Bonus: +{{mult1}} Multipliers, +{{mult2}}% Multipliers, -{{tax}}% Tax Growth.",
+      "3": "Prism Rune Bonus: All Crystal Producer production multiplied by {{mult}}, gain +{{gain}}' free crystal levels.",
+      "4": "Thrift Rune Bonus: Delay all producer cost increases by {{delay}}%. Offering recycle chance: +{{chance}}%. -{{tax}}% Tax Growth",
+      "5": "S. Intellect Rune Bonus: Obtainium gain x{{gain}}. Ant Speed: x{{speed}}. Base Offerings: +{{offerings}}",
+      "6": "IA Rune Bonus: Quark Gain +{{percent1}}%, Ascensions give +{{percent2}}% more of all cube types.",
+      "7": "You cannot grasp the true form of Ant God's treasure."
+    },
+    "talismans": {
+      "fortify": "FORTIFY",
+      "enhance": "ENHANCE",
+      "respec": "RESPEC",
+      "respecAll": "RESPEC ALL",
+      "buy": "BUY",
+      "buyAll": "BUY ALL",
+      "autoBuyOn": "Auto Buy: ON",
+      "autoBuyOff": "Auto Buy: OFF",
+      "clickBuyEveryType": "Click to buy every type of Talisman Shards and Fragments, if affordable",
+      "costToBuy": "Cost to buy {{name}} ({{buyAmount}}): {{obtainium}} Obtainium and {{offerings}} Offerings."
+    },
+    "blessings": {
+      "buyUpTo": "Buy up to <<var(--orchid-text-color);|{{amount}}>> Levels per purchase, if affordable. [Input to toggle]",
+      "autoRuneOn": "Auto Rune: ON",
+      "autoRuneOff": "Auto Rune: OFF",
+      "allIncreaseLevel": "ALL Increase Level",
+      "blessingLevel": "<<orchid|Blessing level>>: {{amount}}",
+      "blessingPower": "Blessing Power: <<turquoise|{{value}}>> =-=-= Effect: <<gold|{{speed}}>>x {{reward}}!",
+      "rewards": {
+        "0": "Global Speed",
+        "1": "Multiplier Boosts",
+        "2": "Ant Sacrifice Rewards",
+        "3": "Delay for A.Boost Cost",
+        "4": "Obtainium --> Ant Mult."
+      },
+      "increaseLevel": "Increase Level By <<orchid|{{amount}}>> [Cost: <<orchid|{{offerings}}>> Offerings]"
+    },
+    "spirits": {
+      "spiritLevel": "Spirit level: <<orchid|{{amount}}>>",
+      "spiritPower": "Spirit Power: <<turquoise|{{value}}>> =-=-= Effect: <<gold|{{speed}}>>{{reward}}!",
+      "rewards": {
+        "0": "x Global Speed",
+        "1": "x Wow! Cubes by Ascension",
+        "2": "x Additional levels to Crystal caps",
+        "3": "x Obtainium",
+        "4": "% stronger Research 4x9 effect"
+      }
+    }
   }
 }
