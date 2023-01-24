@@ -557,6 +557,7 @@
         "autoAscensionTesseract": "On Ascension, Auto buyer will save at least {{percent}}% of your current amount of tesseracts. [Enter number above].",
         "thanksR2x14": "Thanks to Research 2x14, you also multiply Crystal production by {{mult}}",
         "thanksR2x15": "Thanks to Research 2x15, you also multiply Mythos Shard production by {{mult}}",
+        "constantHover": "Hover over an icon for a description of the upgrade. Click to buy it!",
         "names": {
             "workers": "Workers: {{amount}} [+{{gain}}]",
             "investments": "Investments: {{amount}} [+{{gain}}]",
@@ -1072,6 +1073,7 @@
         "cubicSumNegativeError": "You cannot spend a negative amount!"
     },
     "researches": {
+        "hover": "Hover over the grid to get details about researches!",
         "descriptions": {
             "1": "[1x1] Increase the number of free Accelerators gained by 20% from all sources.",
             "2": "[1x2] Increase the number of free Multipliers gained by 20% from all sources.",
@@ -2096,9 +2098,11 @@
         "sacrificeCapital": "SACRIFICE",
         "multiBuyInstructions": "Buy multiple levels at once by holding <<var(--orchid-text-color)|'SHIFT'>> while clicking!",
         "on": "ON",
-        "off": "OFF"
+        "off": "OFF",
+        "languageChange": "Changing the language requires a reload! Would you like to reload now?"
     },
     "upgrades": {
+        "hover": "Hover over an upgrade icon to see details!",
         "descriptions": {
             "1": "Increase production of Workers per producer bought.",
             "2": "Increase production of Investments per producer bought.",
@@ -2414,6 +2418,164 @@
         "currentAscensionTimer": "Current Ascension Timer: +<<gold|{{value}}>> seconds",
         "exportQuarks": "Export Quarks: +<<goldenrod|{{value}}>>"
     },
+    "wowCubes": {
+        "greenText": "You can also spend them on upgrades that persist through Ascension.",
+        "open1": "Open x1",
+        "open10%": "Open 10%",
+        "open50%": "Open 50%",
+        "openCustom": "Custom Amount",
+        "openAll": "Open All",
+        "autoOff": "Auto Open [OFF]",
+        "autoOn": "Auto Open {{percent}}%",
+        "quarks": {
+            "quarkTitle": "-=- Cube to Quark Corner -=-",
+            "resetInfo": "Quark Rewards reset midnight!",
+            "cubeQuarksToday": "Quarks gained from Cubes: <<cyan|{{amount}}>>",
+            "cubeQuarksOpenRequirement": "Open {{amount}} Cubes for next quark.",
+            "cubeQuarksOpenToday": "Cubes opened today: <<orchid|{{amount}}>>",
+            "tesseractQuarksToday": "Quarks gained from Tesseracts: <<cyan|{{amount}}>>",
+            "tesseractQuarksOpenRequirement": "Open {{amount}} Tesseracts for next quark.",
+            "tesseractQuarksOpenToday": "Tesseracts opened today: <<orchid|{{amount}}>>",
+            "hypercubeQuarksToday": "Quarks gained from Hypercubes: <<cyan|{{amount}}>>",
+            "hypercubeQuarksOpenRequirement": "Open {{amount}} Hypercubes for next quark.",
+            "hypercubeQuarksOpenToday": "Hypercubes opened today: <<orchid|{{amount}}>>",
+            "platonicCubeQuarksToday": "Platonic Cubes gained from Cubes: <<cyan|{{amount}}>>",
+            "platonicCubeQuarksOpenRequirement": "Open {{amount}} Platonic Cubes for next quark.",
+            "platonicCubeQuarksOpenToday": "Platonic Cubes opened today: <<orchid|{{amount}}>>"
+        },
+        "cubes": {
+            "intro": "You feel a sense of Pride and Accomplishment... and a hunger for power.",
+            "instructions": "Open up some Lootb-- er, Wow! Cubes, to get one of ten permanent bonuses.",
+            "inventory": "You possess <<yellow|{{amount}}>> Wow! Cubes. Get them from ascending!",
+            "total": "You have a total of <<yellow|{{amount}}>> Cube tributes!",
+            "items": {
+                "1": "Hermes' Tribute x{{amount}}: +{{bonus}} Accelerators per Accelerator Boost",
+                "2": "Aphrodite's Tribute x{{amount}}: +{{bonus}}% Multipliers",
+                "3": "Plutus' Tribute x{{amount}}: +{{bonus}}% Offering Gain",
+                "4": "Iris' Tribute x{{amount}}: +{{bonus}}% Rune EXP",
+                "5": "Athena's Tribute x{{amount}}: +{{bonus}}% Obtainium Gain",
+                "6": "Artemis' Tribute x{{amount}}: +{{bonus}}% Ant Speed",
+                "7": "Ares' Tribute x{{amount}}: +{{bonus}}% Sacrifice Reward",
+                "8": "Moloch's Tribute x{{amount}}: +{{bonus}} Effective ELO",
+                "9": "Midas' Tribute x{{amount}}: +{{bonus}} Bonus Rune Levels on Talismans",
+                "10": "Chronos' Tribute x{{amount}}: +{{bonus}}% Global Time Acceleration"
+            }
+        },
+        "tesseracts": {
+            "intro": "You obtain guidance from beings in another dimension!",
+            "instructions": "Open up some Lootb-- er, Wow! Tesseracts, to boost tributes from the previous tier.",
+            "inventory": "You possess <<yellow|{{amount}}>> Wow! Tesseracts. Get them from ascending with at least 100,000 score!",
+            "total": "You have a total of <<yellow|{{amount}}>> Tesseract gifts!",
+            "items": {
+                "1": "Hermes' Gift x{{amount}}: +{{bonus}}% Hermes Tribute Power",
+                "2": "Aphrodite's Gift x{{amount}}: +{{bonus}}% Aphrodite Tribute Power",
+                "3": "Plutus' Gift x{{amount}}: +{{bonus}}% Plutus Tribute Power",
+                "4": "Iris' Gift x{{amount}}: +{{bonus}}% Iris Tribute Power",
+                "5": "Athena's Gift x{{amount}}: +{{bonus}}% Athena Tribute Power",
+                "6": "Artemis' Gift x{{amount}}: +{{bonus}}% Artemis Tribute Power",
+                "7": "Ares' Gift x{{amount}}: +{{bonus}}% Ares Tribute Power",
+                "8": "Moloch's Gift x{{amount}}: +{{bonus}}% Moloch Tribute Power",
+                "9": "Midas' Gift x{{amount}}: +{{bonus}}% Midas Tribute Power",
+                "10": "Chronos' Gift x{{amount}}: +{{bonus}}% Chronos Tribute Power"
+            }
+        },
+        "hypercubes": {
+            "intro": "I didn't know that Wow! enterprises made 5-Dimensional Objects.",
+            "instructions": "Open up some Lootb-- er, Wow! Hypercubes, to boost blessings from the previous tier.",
+            "inventory": "You possess <<yellow|{{amount}}>> Wow! Hypercubes. Get them from ascending with at least 1e9 score!",
+            "total": "You have a total of <<yellow|{{amount}}>> Hypercube benedictions!",
+            "items": {
+                "1": "Hermes' Benediction x{{amount}}: +{{bonus}}% Hermes Gift Power",
+                "2": "Aphrodite's Benediction x{{amount}}: +{{bonus}}% Aphrodite Gift Power",
+                "3": "Plutus' Benediction x{{amount}}: +{{bonus}}% Plutus Gift Power",
+                "4": "Iris' Benediction x{{amount}}: +{{bonus}}% Iris Gift Power",
+                "5": "Athena's Benediction x{{amount}}: +{{bonus}}% Athena Gift Power",
+                "6": "Artemis' Benediction x{{amount}}: +{{bonus}}% Artemis Gift Power",
+                "7": "Ares' Benediction x{{amount}}: +{{bonus}}% Ares Gift Power",
+                "8": "Moloch's Benediction x{{amount}}: +{{bonus}}% Moloch Gift Power",
+                "9": "Midas' Benediction x{{amount}}: +{{bonus}}% Midas Gift Power",
+                "10": "Chronos' Benediction x{{amount}}: +{{bonus}}% Chronos Gift Power"
+            }
+        },
+        "platonics": {
+            "intro": "This seems very familiar.",
+            "instructions": "Open up some Lootb-- er, Platonic! Cubes, for epic perks!.",
+            "inventory": "You possess <<yellow|{{amount}}>> Wow! Platonic Cubes. Get them from ascending with at least 2.666e12 score!",
+            "total": "You have a total of <<yellow|{{amount}}>> Platonic Cubes opened!",
+            "items": {
+                "1": "Cube Shard: x{{amount}}: +{{bonus}}% Bonus Wow! Cubes",
+                "2": "Tesseract Shard: x{{amount}}: +{{bonus}}% Bonus Wow! Tesseracts",
+                "3": "Hypercube Shard: x{{amount}}: +{{bonus}}% Bonus Wow! Hypercubes",
+                "4": "Platonic Remnant: x{{amount}}: +{{bonus}}% Bonus Platonic! Cubes",
+                "5": "Hypercube Statue: x{{amount}}: +{{bonus}}% ALL Hypercube bonuses",
+                "6": "Keynesian Statue: x{{amount}}: +{{bonus}}% Bonus Constant exponent on taxes",
+                "7": "High-Scoring Statue: x{{amount}}: +{{bonus}}% More Score on corruptions",
+                "8": "Chronos Statue: x{{amount}}: +{{bonus}}% <<yellow|true>> Global Speed (after speed diminishing returns)"
+            }
+        },
+        "hepteractForge": {
+          "howDidIGetHere": "How did I get here?",
+          "noTimeToWaste": "Oh well, no time to waste. This is your lab. Make cool stuff with your Hepteracts!",
+          "noPassiveBonus": "Hepteracts do not provide passive bonuses. They must be made useful through crafting.",
+          "youPossessHepteracts": "You possess <<yellow|{{x}}>> Hepteracts! You know where to get these, right?",
+          "craft": "Craft",
+          "max": "Max",
+          "expand": "Expand",
+          "warp": "Warp",
+          "autoSetting": "Auto Setting : {{x}}%",
+          "autoCraftPercentage": "Autocraft Percentage",
+          "autoCraftPercentagePrompt": "Enter a number from 0 to 100 (integer only!) to set autocraft percentage. Every ascension, that percentage of your hepteracts are used to craft equally split between every hepteract with AUTO ON. Auto crafting also does not consume other resources! [Except Quarks, of course...]",
+          "unlocked": "< UNLOCKED >",
+          "locked": "< LOCKED >",
+          "inventory": "Inventory: {{x}} / {{y}}",
+          "orbs": "Orbs:",
+          "effect": "Effect:",
+          "powder": "Powder:",
+          "warps": "Warps:",
+          "descriptions": {
+            "chronos": {
+              "effect": "This hepteract bends time, in your favor. +0.06% Ascension Speed per Chronos Hepteract.",
+              "currentEffect": "Current Effect: Ascension Speed +{{x}}%",
+              "oneCost": "One of these will cost you {{x}} Hepteracts and {{y}} Obtainium!"
+            },
+            "hyperrealism": {
+              "effect": "This bad boy can make hypercube gain skyrocket. +0.06% Hypercubes per Hyperreal Hepteract.",
+              "currentEffect": "Current Effect: Hypercubes +{{x}}%",
+              "oneCost": "One of these will cost you {{x}} Hepteracts and {{y}} Offerings."
+            },
+            "quark": {
+              "effect": "One pound, two pound fish, fishy grant +0.05% Quarks per Quark Hepteract fish fish.",
+              "currentEffect": "Current Effect: Quarks +{{x}}%",
+              "oneCost": "One of these will cost you {{x}} Hepteracts and {{y}} Quarks."
+            },
+            "challenge": {
+              "effect": "That's preposterous. How are you going to gain +0.05% C15 Exponent per Challenge Hepteract? How!?",
+              "currentEffect": "Current Effect: C15 Exponent +{{x}}%",
+              "oneCost": "One of these will cost you {{x}} Hepteracts, {{y}} Platonic Cubes and {{z}} Cubes."
+            },
+            "abyss": {
+              "effect": "It seems like this holds the power to be at the End of Time. Do you remember why you need this?",
+              "currentEffect": "<[You will submit to the Omega Entity of Time]>",
+              "oneCost": "One of these will cost you {{x}} Hepteracts and {{y}} Wow! Cubes (lol)"
+            },
+            "accelerator": {
+              "effect": "Haha, stupid Corruptions. +2,000 +0.03% Uncorruptable Accelerators per 'Way too many accelerators' Hepteract!",
+              "currentEffect": "Current Effect: Uncorruptable Accelerators +{{x}} + {{y}}%",
+              "oneCost": "One of these will cost you {{x}} Hepteracts and {{y}} Wow! Tesseracts"
+            },
+            "acceleratorBoost": {
+              "effect": "Haha, stupid Corruptions. +0.1% Accelerator Boosts per 'Way too many accelerator boosts' Hepteract!",
+              "currentEffect": "Current Effect: Accelerator Boosts +{{x}}%",
+              "oneCost": "One of these will cost you {{x}} Hepteracts and {{y}} Hypercubes"
+            },
+            "multiplier": {
+              "effect": "Haha, stupid Corruptions. +1,000 +0.03% Uncorruptable Multipliers per 'Way too many multipliers' Hepteract!",
+              "currentEffect": "Current Effect: Uncorruptable Multipliers +{{x}} +{{y}}%",
+              "oneCost": "One of these will cost you {{x}} Hepteracts and {{y}} Obtainium"
+            }
+          }
+        }
+    },
     "corruptions": {
         "corrStatsBtn": "Corruption Stats",
         "corrLoadoutsBtn": "Corruption Loadouts",
@@ -2543,6 +2705,17 @@
         "shop": "Hover over each portion of the shop to see what each upgrade does!"
     },
     "runes": {
+        "names": {
+            "speed": "Speed Rune",
+            "duplication": "Duplication Rune",
+            "prism": "Prism Rune",
+            "thrift": "Thrift Rune",
+            "SI": "Superior Intellect",
+            "IA": "Infinite Ascent",
+            "AOAG": "Antiquities of Ant God"
+        },
+        "maxLevel": "Maxed Level!",
+        "TNL": "+1 in {{EXP}} EXP",
         "offeringsYouHave": "You have {{offerings}} Offerings.",
         "gainExp": "Gain {{amount}}x EXP per offering sacrificed.",
         "recycleChance": "You have {{percent}}% chance of recycling your offerings. This multiplies EXP gain by {{mult}}!",
@@ -2577,6 +2750,15 @@
             "7": "You cannot grasp the true form of Ant God's treasure."
         },
         "talismans": {
+            "names": {
+                "exemption": "Exemption",
+                "chronos": "Chronos",
+                "midas": "Midas",
+                "metaphysics": "Metaphysics",
+                "polymath": "Polymath",
+                "mortuus": "Mortuus Est",
+                "plastic": "Plastic"
+            },
             "fortify": "FORTIFY",
             "enhance": "ENHANCE",
             "respec": "RESPEC",
