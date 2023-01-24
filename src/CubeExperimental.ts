@@ -9,7 +9,6 @@ want, though!
 Thank you! */
 
 import Decimal from 'break_infinity.js';
-import i18next from 'i18next';
 import { achievementaward } from './Achievements';
 import { calculateCubeBlessings } from './Calculate';
 import { CalcECC } from './Challenges';
@@ -92,10 +91,14 @@ export abstract class Cube {
     async openCustom() {
         // TODO: Replace this with `this`?
         const thisInPlayer = player[this.key] as Cube;
-        const amount = await Prompt(i18next.t('cubes.howManyCubesOpen', { x: format(thisInPlayer, 0, true) }));
+        const amount = await Prompt(
+            `How many cubes would you like to open? You have ${format(thisInPlayer, 0, true)}! ` +
+            '\nYou can input a percentage of cubes to open, for example: "50%" or "100%".' +
+            '\nYou can start the input with "-" (put in a negative value) to put in a value, that will be saved, which means you open all cubes except the specified number. (also works with %)'
+        );
 
         if (amount === null) {
-            return Alert(i18next.t('cubes.noCubesOpened'));
+            return Alert('OK. No cubes opened.');
         }
 
         const isPercentage = amount.endsWith('%');
@@ -104,13 +107,13 @@ export abstract class Cube {
             : (isPercentage ? Number(amount.slice(0, -1)) : Number(amount));
 
         if (Number.isNaN(cubesToOpen) || !Number.isFinite(cubesToOpen) || !Number.isInteger(cubesToOpen)) {
-            return Alert(i18next.t('general.validation.finiteInt'));
+            return Alert('Value must be a finite, non-decimal number!');
         } else if (thisInPlayer.value < cubesToOpen) {
-            return Alert(i18next.t('cubes.validation.notEnough'));
+            return Alert('You don\'t have enough cubes to open!');
         } else if (cubesToOpen <= 0) {
-            return Alert(i18next.t('cubes.validation.negative'));
+            return Alert(`You can't open a negative ${isPercentage ? 'percent' : 'number'} of cubes.`);
         } else if (isPercentage && cubesToOpen > 100) {
-            return Alert(i18next.t('cubes.validation.invalidPercent', { x: cubesToOpen }));
+            return Alert(`You can't open ${cubesToOpen}% of your cubes...`);
         }
 
         if (isPercentage) {

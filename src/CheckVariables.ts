@@ -17,7 +17,6 @@ import type { IOcteractData } from './Octeracts';
 import { octeractData, OcteractUpgrade } from './Octeracts';
 import type { ISingularityChallengeData} from './SingularityChallenges';
 import { SingularityChallenge, singularityChallengeData } from './SingularityChallenges';
-import i18next from 'i18next';
 
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
 
@@ -621,14 +620,14 @@ export const checkVariablesOnLoad = (data: PlayerSave) => {
         player.shopUpgrades.calculator2 = 0;
         player.shopUpgrades.calculator3 = 0;
         player.wowAbyssals += 1e8 * player.platonicUpgrades[16] // Refund based off of abyss hepteracts spent
-        void Alert(i18next.t('general.updateAlerts.june282021'))
+        void Alert('June 28, 2021: V2.5.3. You have been refunded quarks from calculators if you purchased them. They are no longer refundable so be wary!')
     }
 
     if (data.loadedV255 === undefined) {
         player.loadedV255 = true;
         player.worlds.add(1000 * player.shopUpgrades.powderEX + 1000 / 2 * (player.shopUpgrades.powderEX - 1) * (player.shopUpgrades.powderEX), false);
         player.shopUpgrades.powderEX = 0;
-        void Alert(i18next.t('general.updateAlerts.july22021'))
+        void Alert('July 2, 2021: V2.5.5. You have been refunded quarks from Powder EX upgrade, if you purchased levels. Your T1 ants were also reset and base cost set to 1e700 particles. Powder EX is no longer refundable, though, so be careful!')
         player.firstCostAnts = new Decimal('1e700')
         player.firstOwnedAnts = 0;
     }
@@ -815,11 +814,7 @@ export const checkVariablesOnLoad = (data: PlayerSave) => {
             player.singularityUpgrades.ascensions.freeLevels += 5;
         }
 
-        if (player.singularityCount > 0) {
-            void Alert(i18next.t('general.updateAlerts.v297hotfix1Sing'))
-        } else {
-            void Alert(i18next.t('general.updateAlerts.v297hotfix1NoSing'))
-        }
+        void Alert(`You have loaded into the version 2.9.7 hotfix 1! ${player.singularityCount > 0 ? 'Your uncapped resource singularity upgrades have been refunded! Sorry for the inconvenience.' : ''}`)
     }
 
     if (data.shopBuyMaxToggle === undefined) {
@@ -884,7 +879,7 @@ export const checkVariablesOnLoad = (data: PlayerSave) => {
         }
         if (player.highestSingularityCount > 230) {
             player.highestSingularityCount = 230
-            void Alert(i18next.t('general.updateAlerts.sing230Balancing'))
+            void Alert('Due to balancing changes, you were sent back to Singularity 230 to prevent softlocking your savefile!')
         }
         player.loadedV2930Hotfix1 = true
     }
@@ -897,13 +892,13 @@ export const checkVariablesOnLoad = (data: PlayerSave) => {
         player.shopUpgrades.chronometerInfinity = Math.min(1000, player.shopUpgrades.chronometerInfinity * 2)
         player.shopUpgrades.improveQuarkHept5 = Math.min(100, player.shopUpgrades.improveQuarkHept5 * 2)
         player.singularityUpgrades.offeringAutomatic.refund();
-        void Alert(i18next.t('general.updateAlerts.december22xxxx'))
+        void Alert('You have loaded into the December 22 patch v1.')
     }
 
     if (data.loadedV21003Hotfix1 === undefined) {
         player.loadedV21003Hotfix1 = true
         player.singularityUpgrades.blueberries.refund()
-        void Alert(i18next.t('general.updateAlerts.january42023'))
+        void Alert('You have loaded into the January 4, 2023 Patch v1.')
     }
 
     const oldest = localStorage.getItem('firstPlayed')
